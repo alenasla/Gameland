@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "400914236460",
+    "project_id": "gamelandandroid-bda9c",
+    "storage_bucket": "gamelandandroid-bda9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400914236460:android:3f858052d7946425e3bd89",
+        "android_client_info": {
+          "package_name": "com.example.gameland"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5lmnNOqvO3swl4Q3f-77H6AtKfBBeTqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400914236460:android:68cdd0b030c02a98e3bd89",
+        "android_client_info": {
+          "package_name": "com.example.gameland_android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5lmnNOqvO3swl4Q3f-77H6AtKfBBeTqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

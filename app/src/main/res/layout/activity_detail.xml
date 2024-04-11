@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="80dp"
+    android:clipToPadding="false"
+    tools:context=".DetailActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/recCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="40dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        >
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    >
+
+    <!--    <com.github.clans.fab.FloatingActionMenu-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        -->
+<!--        app:menu_fab_size="normal"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        app:menu_colorPressed="@color/lavender"-->
+<!--        app:menu_colorNormal="@color/lavender"-->
+<!--        app:menu_icon="@drawable/baseline_format_list_bulleted_24"-->
+<!--        app:menu_openDirection="down"-->
+<!--        app:menu_showShadow="true">-->
+<!--        &lt;!&ndash;            <com.github.clans.fab.FloatingActionButton&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:id="@+id/editButton"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:src="@drawable/ic_baseline_edit_24"&ndash;&gt;-->
+<!--        &lt;!&ndash;                app:fab_showShadow="true"&ndash;&gt;-->
+<!--        &lt;!&ndash;                app:fab_colorNormal="@color/green"&ndash;&gt;-->
+<!--        &lt;!&ndash;                app:fab_size="mini"/>&ndash;&gt;-->
+<!--        <com.github.clans.fab.FloatingActionButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/deleteButton"-->
+<!--            android:src="@drawable/ic_baseline_delete_24"-->
+<!--            app:fab_showShadow="true"-->
+<!--            app:fab_colorNormal="@color/red"-->
+<!--            app:fab_size="mini"/>-->
+<!--    </com.github.clans.fab.FloatingActionMenu>-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableRight="@drawable/baseline_edit_24"
+
+            android:background="?attr/selectableItemBackground"
+            />
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/baseline_delete_forever_24"
+            android:paddingLeft="10dp"
+            android:background="?attr/selectableItemBackground"
+
+             />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detailName"
+        android:text="Title"
+        android:textStyle="bold"
+        android:layout_marginTop="14dp"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/black"/>
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:id="@+id/detailImage"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:src="@drawable/baseline_image_24"
+        android:scaleType="centerCrop"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category: "
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp" />
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:padding="20dp"-->
+<!--            android:text="Category"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:id="@+id/detailCategory"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textColor="@color/black" />-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+            android:text="Category"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="top|center"
+            android:id="@+id/detailCategory"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description: "
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_gravity="top|center"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+            android:text="Description"
+            android:layout_gravity="top|center"
+            android:id="@+id/detailDescription"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price: "
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_gravity="top|center"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:padding="10dp"
+            android:text="Price"
+            android:layout_gravity="top|center"
+            android:id="@+id/detailPrice"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+
+
+    </LinearLayout>
+
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <com.github.clans.fab.FloatingActionMenu-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            app:menu_fab_size="normal"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            app:menu_colorPressed="@color/black"-->
+<!--            app:menu_colorNormal="@color/black"-->
+<!--            app:menu_icon="@drawable/ic_baseline_format_list_bulleted_24"-->
+<!--            app:menu_openDirection="up"-->
+<!--            app:menu_showShadow="true">-->
+<!--            <com.github.clans.fab.FloatingActionButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/editButton"-->
+<!--                android:src="@drawable/ic_baseline_edit_24"-->
+<!--                app:fab_showShadow="true"-->
+<!--                app:fab_colorNormal="@color/green"-->
+<!--                app:fab_size="mini"/>-->
+<!--            <com.github.clans.fab.FloatingActionButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/deleteButton"-->
+<!--                android:src="@drawable/ic_baseline_delete_24"-->
+<!--                app:fab_showShadow="true"-->
+<!--                app:fab_colorNormal="@color/red"-->
+<!--                app:fab_size="mini"/>-->
+<!--        </com.github.clans.fab.FloatingActionMenu>-->
+<!--    </RelativeLayout>-->
+</LinearLayout>
+</androidx.cardview.widget.CardView>
+</ScrollView>
