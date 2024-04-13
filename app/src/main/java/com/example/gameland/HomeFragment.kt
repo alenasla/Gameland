@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(context, 1)
         dataList = ArrayList()
-        adapter = MyAdapter(requireContext(), dataList) // Note: Ensure MyAdapter can handle a non-nullable List<DataClass>
+        adapter = MyAdapter(requireContext(), dataList)
         recyclerView.adapter = adapter
         databaseReference = FirebaseDatabase.getInstance().getReference("Products")
         loadProductsFromFirebase()
@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
                 dataList.clear()
                 for (itemSnapshot in dataSnapshot.children) {
                     val dataClass = itemSnapshot.getValue(DataClass::class.java)
-                    dataClass?.key = itemSnapshot.key // Assuming DataClass has a 'key' property
+                    dataClass?.key = itemSnapshot.key
                     dataClass?.let { dataList.add(it) }
                 }
 

@@ -3,80 +3,81 @@ package com.example.gameland
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import com.example.gameland.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
-    private var auth: FirebaseAuth? = null
-    private var binding: ActivityMainBinding? = null
-    var recyclerView: RecyclerView? = null
-    var dataList: List<DataClass>? = null
-    var databaseReference: DatabaseReference? = null
-    var eventListener: ValueEventListener? = null
+    private lateinit var auth: FirebaseAuth
+    private lateinit var binding: ActivityMainBinding
+
+    interface LogoutCleanup {
+        fun onLogoutCleanup()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding!!.root)
+        setContentView(binding.root)
+
         auth = FirebaseAuth.getInstance()
-        val user = auth!!.currentUser
 
+        checkUserStatus()
+        setupNavigation()
+    }
 
-        // checking if the user is logged in
+    private fun checkUserStatus() {
+        val user = auth.currentUser
         if (user == null) {
-            // In case user is not logged in, we navigate him to the Login screen
-            val intent = Intent(this@MainActivity, Login::class.java)
-            startActivity(intent)
-            finish()
-            return
+            navigateToLogin()
         } else {
-            // If user is logged, the application opens with main page showing up
-            binding!!.userDetails.text = user.email
-            binding!!.btnLogout.setOnClickListener { view: View? ->
-                auth!!.signOut()
-                val intent = Intent(this@MainActivity, Login::class.java)
-                startActivity(intent)
-                finish()
+            binding.userDetails.text = user.email
+            binding.btnLogout.setOnClickListener {
+                logoutUser()
             }
-            binding!!.fab.setOnClickListener { view: View? ->
-                val intent = Intent(this@MainActivity, UploadProduct::class.java)
+            binding.fab.setOnClickListener {
+                val intent = Intent(this, UploadProduct::class.java)
                 startActivity(intent)
             }
-
-            // Adding a primary fragment
+            // Set HomeFragment as the initial fragment
             replaceFragment(HomeFragment())
-
-            // When clicked on the available options in the bottom navigation bar, the correct screen fragment will open
-            binding!!.bottomNavigationView.setOnItemSelectedListener { item: MenuItem ->
-                switchFragment(item.itemId)
-                true
-            }
         }
     }
 
+    private fun setupNavigation() {
+        binding.bottomNavigationView.setOnItemSelectedListener { item: MenuItem ->
+            switchFragment(item.itemId)
+            true
+        }
+    }
+
+    private fun logoutUser() {
+        auth.signOut()
+        navigateToLogin()
+    }
+
+    private fun navigateToLogin() {
+        startActivity(Intent(this, Login::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        })
+        finish()
+    }
+
     private fun switchFragment(itemId: Int) {
-        var fragment: Fragment? = null
-        if (itemId == R.id.home) {
-            fragment = HomeFragment()
-        } else if (itemId == R.id.searchFragment) {
-            fragment = SearchFragment()
-        } else if (itemId == R.id.cartFragment) {
-            fragment = CartFragment()
-        } else if (itemId == R.id.profileFragment) {
-            fragment = ProfileFragment()
+        val fragment: Fragment? = when (itemId) {
+            R.id.home -> HomeFragment()
+            R.id.searchFragment -> SearchFragment()
+            R.id.cartFragment -> CartFragment()
+            R.id.profileFragment -> ProfileFragment()
+            else -> null
         }
         fragment?.let { replaceFragment(it) }
     }
 
     private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout, fragment)
-        fragmentTransaction.commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frame_layout, fragment)
+            .commit()
     }
 }

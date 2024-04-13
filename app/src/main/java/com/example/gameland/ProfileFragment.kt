@@ -10,6 +10,7 @@ class ProfileFragment : Fragment() {
     private var mParam1: String? = null
     private var mParam2: String? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Safe access to arguments using ?. let {} pattern

@@ -61,6 +61,10 @@ class Registration : AppCompatActivity() {
                 Toast.makeText(this, "Enter password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            if (password.length < 6) {
+                Toast.makeText(this, "Password must be at least 6 characters long.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             progressBar.visibility = View.VISIBLE
 
@@ -72,7 +76,7 @@ class Registration : AppCompatActivity() {
                     finish()
                 } else {
                     Log.w("RegistrationActivity", "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(this, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Registration failed", Toast.LENGTH_LONG).show()
                 }
             }
         }
