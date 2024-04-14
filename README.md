@@ -9,6 +9,7 @@
   - Utilizes Firebase Authentication for user management.
   - **Registration**: New users can register with their email and password.
   - **Login**: Users can log in to fully access application features.
+  - **NOTE** In the application's current state there is no separate user experience without successful authentication (a user must be registered and logged) in order to use the application.
 
 ### Firebase Integration
 - **CRUD Operations**: The application's integration with the Firebase enables it to support:
