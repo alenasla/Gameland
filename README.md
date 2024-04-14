@@ -4,10 +4,11 @@
 **Gameland** is a digital game store application that allows users to browse, search, and manage video game products. The application in **its current state** is designed to demonstrate the integration of Android applications with Firebase by following the CRUD (Create, Read, Update, Delete) principles for data management. 
 
 ## Technology Stack & Open-Source libraries
-- **[Kotlin]([https://kotlinlang.org/docs/home.html])**
-- **[Material Components](https://material.io/develop/android)**
-- **[Glide](https://bumptech.github.io/glide/)**
+- **[Kotlin](https://kotlinlang.org/docs/home.html)**
 - **[Firebase](https://firebase.google.com/products/database)**
+- **[Material Components](https://material.io/develop/android)**, implements Material Design components, application utilizes CardView, RecyclerView components. 
+- **[Glide](https://bumptech.github.io/glide/)**, manages image loading and caching.
+- 
 - **Backend**: Firebase Realtime Database, Firebase Authentication, Firebase Storage
   
 ## Features
