@@ -1,8 +1,12 @@
 # Gameland
 
 ## Overview
-**Gameland** is a digital game store application that allows users to browse, search, and manage video game products. The application in its current state is designed to demonstrate the integration of Android applications with Firebase by following the CRUD (Create, Read, Update, Delete) principles for data management. 
+**Gameland** is a digital game store application that allows users to browse, search, and manage video game products. The application in **its current state** is designed to demonstrate the integration of Android applications with Firebase by following the CRUD (Create, Read, Update, Delete) principles for data management. 
 
+## Technology Stack
+- **[Kotlin](https://kotlinlang.org/)**
+- **Backend**: Firebase Realtime Database, Firebase Authentication, Firebase Storage
+  
 ## Features
 
 ### User Authentication
@@ -19,12 +23,17 @@
   - **Delete**: Remove products from the database.
 
 ### Firebase Realtime Database
-  - All data regarding products and user-specific data like cart items are stored and managed in Firebase Realtime Database, allowing real-time updates and synchronization across devices.
+  - Used to store product and manage user-specific data, such as cart items, allowing for real-time updates and device synchronization.
 
 ### Firebase Storage
-  - Uses Firebase's storage solutions to store and retrieve product images, ensuring fast and scalable access to media files.
+  - Used to store and retrieve product images, ensuring fast and scalable access to media files.
 
 ### Product Search Functionality
-  - Integrated search feature to quickly find products by name or category.
+  - Integrated search feature allows to quickly find products by their name.
+
+### Cart Functionality
+  - Users can add products to their personal cart where items are saved within their user session.
+
+
 
     
