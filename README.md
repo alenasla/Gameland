@@ -9,8 +9,6 @@
 - **[Firebase](https://firebase.google.com/products/database)**
 - **[Material Components](https://material.io/develop/android)**: Implements Material Design components, application utilizes CardView, RecyclerView components. 
 - **[Glide](https://bumptech.github.io/glide/)**: Manages image loading and caching.
-- 
-- **Backend**: Firebase Realtime Database, Firebase Authentication, Firebase Storage
   
 ## Features
 
@@ -38,6 +36,11 @@
 
 ### Cart Functionality
   - Users can add products to their personal cart where items are saved within their user session.
+
+## Downloading the application
+To download the latest available **.apk** file, press here: **[Releases](https://github.com/alenasla/Gameland/releases)**
+
+
 
 
 
