@@ -9,7 +9,7 @@
   - Utilizes Firebase Authentication for user management.
   - **Registration**: New users can register with their email and password.
   - **Login**: Users can log in to fully access application features.
-  - **NOTE** In the application's current state there is no separate user experience without successful authentication (a user must be registered and logged) in order to use the application.
+- **NOTE**: In the application's current state there is no separate user experience without successful authentication (a user must be registered and logged) in order to use the application.
 
 ### Firebase Integration
 - **CRUD Operations**: The application's integration with the Firebase enables it to support:
@@ -18,5 +18,13 @@
   - **Update**: Modify details of already existing products.
   - **Delete**: Remove products from the database.
 
+### Firebase Realtime Database
+  - All data regarding products and user-specific data like cart items are stored and managed in Firebase Realtime Database, allowing real-time updates and synchronization across devices.
+
+### Firebase Storage
+  - Uses Firebase's storage solutions to store and retrieve product images, ensuring fast and scalable access to media files.
+
+### Product Search Functionality
+  - Integrated search feature to quickly find products by name or category.
 
     
