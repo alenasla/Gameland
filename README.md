@@ -2,7 +2,7 @@
 
 ## Disclaimer
 The product is currently in active development stage and not yet finalized. New features, QOL improvements, accessibility options and UI/UX changes will be addressed and added with upcoming future updates. 
-To test the application you may use the test admin credentials - email address: **admin@admin.com**, password: **admin123**
+- To test the application you may use the test admin credentials - email address: **admin@admin.com**, password: **admin123**
 
 ## Overview
 **Gameland** is a digital game store application that allows users to browse, search, and manage video game products. The application in **its current state** is designed to demonstrate the integration of Android applications with Firebase by following the CRUD (Create, Read, Update, Delete) principles for data management. 
